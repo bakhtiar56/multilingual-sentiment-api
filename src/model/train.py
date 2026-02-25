@@ -1,8 +1,6 @@
 """Fine-tune XLM-RoBERTa for 3-class sentiment classification."""
 
 import argparse
-import os
-
 import numpy as np
 from datasets import load_from_disk
 from sklearn.metrics import accuracy_score, f1_score
