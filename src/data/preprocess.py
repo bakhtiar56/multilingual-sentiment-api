@@ -24,7 +24,9 @@ def clean_text(text: str) -> str:
     return text
 
 
-def tokenize_data(dataset: DatasetDict, model_name: str = settings.MODEL_NAME) -> DatasetDict:
+def tokenize_data(
+    dataset: DatasetDict, model_name: str = settings.MODEL_NAME
+) -> DatasetDict:
     """Tokenize dataset using the xlm-roberta-base tokenizer."""
     tokenizer = AutoTokenizer.from_pretrained(model_name)
 
@@ -51,8 +53,12 @@ def create_splits(dataset: DatasetDict) -> DatasetDict:
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Preprocess multilingual sentiment data")
-    parser.add_argument("--input", default=RAW_DATA_DIR, help="Path to raw dataset on disk")
+    parser = argparse.ArgumentParser(
+        description="Preprocess multilingual sentiment data"
+    )
+    parser.add_argument(
+        "--input", default=RAW_DATA_DIR, help="Path to raw dataset on disk"
+    )
     parser.add_argument("--output", default=PROCESSED_DATA_DIR, help="Output path")
     args = parser.parse_args()
 

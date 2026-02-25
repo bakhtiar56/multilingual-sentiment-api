@@ -76,4 +76,3 @@ def test_predict_batch_returns_list():
     results = predictor.predict_batch(["Good", "Bad"])
     assert isinstance(results, list)
     assert len(results) == 2
-
