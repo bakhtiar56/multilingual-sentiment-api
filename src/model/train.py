@@ -82,4 +82,6 @@ if __name__ == "__main__":
     parser.add_argument("--batch-size", type=int, default=16)
     parser.add_argument("--learning-rate", type=float, default=2e-5)
     args = parser.parse_args()
-    train(epochs=args.epochs, batch_size=args.batch_size, learning_rate=args.learning_rate)
+    train(
+        epochs=args.epochs, batch_size=args.batch_size, learning_rate=args.learning_rate
+    )

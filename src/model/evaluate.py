@@ -45,14 +45,18 @@ def evaluate(model_path: str) -> None:
 
     acc = accuracy_score(true_labels, pred_labels)
     f1_macro = f1_score(true_labels, pred_labels, average="macro", zero_division=0)
-    f1_weighted = f1_score(true_labels, pred_labels, average="weighted", zero_division=0)
+    f1_weighted = f1_score(
+        true_labels, pred_labels, average="weighted", zero_division=0
+    )
     print(f"Accuracy:    {acc:.4f}")
     print(f"F1 Macro:    {f1_macro:.4f}")
     print(f"F1 Weighted: {f1_weighted:.4f}")
 
     cm = confusion_matrix(true_labels, pred_labels, labels=label_names)
     fig, ax = plt.subplots(figsize=(6, 5))
-    sns.heatmap(cm, annot=True, fmt="d", xticklabels=label_names, yticklabels=label_names, ax=ax)
+    sns.heatmap(
+        cm, annot=True, fmt="d", xticklabels=label_names, yticklabels=label_names, ax=ax
+    )
     ax.set_xlabel("Predicted")
     ax.set_ylabel("True")
     ax.set_title("Confusion Matrix")

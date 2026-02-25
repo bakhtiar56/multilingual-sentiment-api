@@ -9,7 +9,9 @@ from pydantic import BaseModel, Field
 
 class PredictionRequest(BaseModel):
     text: str = Field(..., min_length=1, description="Text to analyse")
-    language: Optional[str] = Field(None, description="ISO 639-1 language code (optional)")
+    language: Optional[str] = Field(
+        None, description="ISO 639-1 language code (optional)"
+    )
 
 
 class BatchPredictionRequest(BaseModel):
