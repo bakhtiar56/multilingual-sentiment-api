@@ -4,7 +4,6 @@ import argparse
 import os
 
 import matplotlib.pyplot as plt
-import numpy as np
 import seaborn as sns
 from datasets import load_from_disk
 from sklearn.metrics import (
